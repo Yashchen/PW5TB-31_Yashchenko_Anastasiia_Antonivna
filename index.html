@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аналіз Надійності ЕПС</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrapper">
+    <h1>Оцінка Надійності та Перерв</h1>
+
+    <form id="reliability-form">
+      <div class="field">
+        <label for="lambda">Інтенсивність відмов (λ):</label>
+        <input type="number" id="lambda" step="0.001" required>
+      </div>
+
+      <div class="field">
+        <label for="restore">Час відновлення (t, год):</label>
+        <input type="number" id="restore" step="0.1" required>
+      </div>
+
+      <div class="field">
+        <label for="maintenance">Плановий ремонт (tₚ, год):</label>
+        <input type="number" id="maintenance" step="0.1">
+      </div>
+
+      <div class="field">
+        <label for="type">Конфігурація мережі:</label>
+        <select id="type" required>
+          <option value="single">Одноколова</option>
+          <option value="double">Двоколова</option>
+        </select>
+      </div>
+
+      <button type="submit">Обчислити</button>
+    </form>
+
+    <section id="result-block">
+      <h2>Результат:</h2>
+      <div id="output-text"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
